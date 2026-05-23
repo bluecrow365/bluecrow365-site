@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0052FF"/>
+      <stop offset="100%" stop-color="#00D4FF"/>
+    </linearGradient>
+    <linearGradient id="mark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.75"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="980" cy="120" r="180" fill="#FFFFFF" opacity="0.08"/>
+  <circle cx="180" cy="540" r="220" fill="#FFFFFF" opacity="0.06"/>
+  <g transform="translate(120, 215)">
+    <rect width="80" height="80" rx="20" fill="url(#mark)"/>
+    <path d="M40 16 L64 40 L40 64 L16 40 Z" fill="#0052FF"/>
+  </g>
+  <text x="220" y="280" font-family="'Noto Sans JP','Helvetica Neue',Arial,sans-serif" font-weight="800" font-size="64" fill="#FFFFFF" letter-spacing="-1">BlueCrow365</text>
+  <text x="120" y="380" font-family="'Noto Sans JP','Helvetica Neue',Arial,sans-serif" font-weight="800" font-size="56" fill="#FFFFFF">AIと一緒に、お仕事をちょっと楽に。</text>
+  <text x="120" y="450" font-family="'Noto Sans JP','Helvetica Neue',Arial,sans-serif" font-weight="400" font-size="28" fill="#FFFFFF" opacity="0.85">ホームページ制作 / 業務効率化アプリ / AI活用のご相談</text>
+  <text x="120" y="540" font-family="'Noto Sans JP','Helvetica Neue',Arial,sans-serif" font-weight="600" font-size="22" fill="#FFFFFF" opacity="0.7">bluecrow365.com</text>
+</svg>

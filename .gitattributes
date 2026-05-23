@@ -1,0 +1,2 @@
+# シェルスクリプトは常に LF (Linux コンテナ内で実行されるため CRLF だと壊れる)
+*.sh text eol=lf
