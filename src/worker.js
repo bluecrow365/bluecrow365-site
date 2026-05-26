@@ -1,26 +1,35 @@
 import { EmailMessage } from "cloudflare:email";
 
-export async function onRequestPost({ request, env }) {
+export default {
+  async fetch(request, env) {
+    const url = new URL(request.url);
+
+    if (url.pathname === "/api/contact") {
+      if (request.method === "POST") return handleContact(request, env);
+      return new Response("Method Not Allowed", { status: 405 });
+    }
+
+    return env.ASSETS.fetch(request);
+  },
+};
+
+async function handleContact(request, env) {
   try {
     const formData = await request.formData();
-
     const name    = String(formData.get("name")    ?? "").trim().slice(0, 200);
     const email   = String(formData.get("email")   ?? "").trim().slice(0, 200);
     const message = String(formData.get("message") ?? "").trim().slice(0, 5000);
 
-    if (!name || !email || !message) {
+    if (!name || !email || !message)
       return Response.json({ error: "missing" }, { status: 400 });
-    }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      return Response.json({ error: "invalid_email" }, { status: 400 });
-    }
 
-    // ヘッダーインジェクション対策
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
+      return Response.json({ error: "invalid_email" }, { status: 400 });
+
     const safeName  = name.replace(/[\r\n]/g, " ");
     const safeEmail = email.replace(/[\r\n]/g, "");
 
-    // 件名をBase64エンコード（日本語対応）
-    const subjectText = `[bluecrow Studio] お問い合わせ: ${safeName}`;
+    const subjectText  = `[bluecrow Studio] お問い合わせ: ${safeName}`;
     const subjectBytes = new TextEncoder().encode(subjectText);
     const subjectB64   = btoa(String.fromCharCode(...subjectBytes));
 
@@ -52,8 +61,4 @@ export async function onRequestPost({ request, env }) {
     console.error("contact send error:", err);
     return Response.json({ error: "send_failed" }, { status: 500 });
   }
-}
-
-export function onRequestOptions() {
-  return new Response(null, { headers: { Allow: "POST, OPTIONS" } });
 }
