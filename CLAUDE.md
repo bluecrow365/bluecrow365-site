@@ -1,4 +1,4 @@
-# BlueCrow365 — bluecrow365.com
+# BlueCrow365 — blue-crow365.com
 
 AI を活用した (1) ホームページ制作 (2) 業務効率化アプリ開発 (3) AI活用サービス を提供する
 自社サイト。静的 HTML/CSS/JS の 3 ファイル構成。
@@ -50,12 +50,12 @@ python -m http.server 8000
 
 ## samples/ ディレクトリ
 
-`/samples/` 配下に営業用試作 HP を置く。デプロイ先は `bluecrow365.com/samples/<案件slug>/`。
+`/samples/` 配下に営業用試作 HP を置く。デプロイ先は `blue-crow365.com/samples/<案件slug>/`。
 
 - 1案件 = 1サブディレクトリ (kebab-case, 例: `samples/nagomi-neko/`)
 - 各案件ディレクトリは独立した静的サイト (index.html / styles.css / 画像)
 - 本体サイトと CSS を共有しないこと (営業先ごとにトーンを変える前提)
-- 公開前段階のものは `samples/_drafts/` に置く (robots.txt で除外済み)
+- 公開前段階のものは `samples/previews/` に置く (robots.txt で除外済み)
 - Works セクションに掲載するときは、お客様の承諾を得てから実名を出すこと
 
 ## 作業ルール

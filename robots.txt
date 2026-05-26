@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /samples/previews/
 
-Sitemap: https://bluecrow365.com/sitemap.xml
+Sitemap: https://blue-crow365.com/sitemap.xml
