@@ -1,0 +1,32 @@
+{
+  "name": "BlueCrow365 (isolated)",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "args": {
+      "TZ": "${localEnv:TZ:Asia/Tokyo}"
+    }
+  },
+  "runArgs": [
+    "--cap-add=NET_ADMIN",
+    "--cap-add=NET_RAW"
+  ],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "anthropic.claude-code"
+      ],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash"
+      }
+    }
+  },
+  "remoteUser": "node",
+  "mounts": [
+    "source=bluecrow365-bashhistory-${devcontainerId},target=/commandhistory,type=volume",
+    "source=C:\\Users\\momiz\\OneDrive\\Documents\\new,target=/obsidian-vault,type=bind,consistency=cached"
+  ],
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
+  "workspaceFolder": "/workspace",
+  "forwardPorts": [8000],
+  "postCreateCommand": "sudo /usr/local/bin/init-firewall.sh"
+}

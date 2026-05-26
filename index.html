@@ -3,27 +3,27 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="BlueCrow365 — AIを学びながら、ホームページ制作・業務効率化アプリ開発をお手伝いしています。中小企業の「もう少し楽に」を、ご一緒に。" />
+<meta name="description" content="bluecrow Studio — AIを学びながら、ホームページ制作・業務効率化アプリ開発をお手伝いしています。中小企業の「もう少し楽に」を、ご一緒に。" />
 <meta name="theme-color" content="#0052FF" />
 <meta name="format-detection" content="telephone=no" />
-<title>BlueCrow365 — AIと一緒に、お仕事をちょっと楽に。</title>
+<title>bluecrow Studio — AIと一緒に、お仕事をちょっと楽に。</title>
 
 <link rel="canonical" href="https://bluecrow365.com/" />
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 <link rel="apple-touch-icon" href="favicon.svg" />
 
 <meta property="og:type" content="website" />
-<meta property="og:site_name" content="BlueCrow365" />
+<meta property="og:site_name" content="bluecrow Studio" />
 <meta property="og:locale" content="ja_JP" />
 <meta property="og:url" content="https://bluecrow365.com/" />
-<meta property="og:title" content="BlueCrow365 — AIと一緒に、お仕事をちょっと楽に。" />
+<meta property="og:title" content="bluecrow Studio — AIと一緒に、お仕事をちょっと楽に。" />
 <meta property="og:description" content="ホームページ制作 / 業務効率化アプリ / AI活用のご相談。中小企業の「もう少し楽に」を、ご一緒に。" />
 <meta property="og:image" content="https://bluecrow365.com/og-image.svg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="BlueCrow365 — AIと一緒に、お仕事をちょっと楽に。" />
+<meta name="twitter:title" content="bluecrow Studio — AIと一緒に、お仕事をちょっと楽に。" />
 <meta name="twitter:description" content="ホームページ制作 / 業務効率化アプリ / AI活用のご相談。" />
 <meta name="twitter:image" content="https://bluecrow365.com/og-image.svg" />
 
@@ -36,7 +36,7 @@
 {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "BlueCrow365",
+  "name": "bluecrow Studio",
   "url": "https://bluecrow365.com/",
   "logo": "https://bluecrow365.com/favicon.svg",
   "image": "https://bluecrow365.com/og-image.svg",
@@ -51,9 +51,9 @@
 
 <header class="site-header">
   <div class="container header-inner">
-    <a href="#" class="logo" aria-label="BlueCrow365">
+    <a href="#" class="logo" aria-label="bluecrow Studio">
       <span class="logo-mark" aria-hidden="true"></span>
-      <span class="logo-text">BlueCrow<span class="logo-accent">365</span></span>
+      <span class="logo-text">bluecrow<span class="logo-accent"> Studio</span></span>
     </a>
     <nav class="nav" aria-label="メインナビゲーション">
       <a href="#about">はじめまして</a>
@@ -114,7 +114,7 @@
     <div class="container intro-inner" data-fade>
       <div class="intro-mark" aria-hidden="true">✦</div>
       <p class="eyebrow eyebrow-warm">Hello</p>
-      <h2>はじめまして、BlueCrow365です。</h2>
+      <h2>はじめまして、bluecrow Studioです。</h2>
       <p>
         個人で運営している、ちいさな制作・開発のお店です。<br />
         ホームページや業務アプリを、AIの力も借りながら作っています。
@@ -318,15 +318,33 @@
         ご相談・お見積もりは無料です。「こんなこと聞いてもいい？」も歓迎します。<br />
         1営業日以内にご返信いたします。
       </p>
-      <a class="btn btn-primary btn-lg js-mail"
-         data-user="contact"
-         data-domain="bluecrow365.com"
-         href="#contact"
-         aria-label="メールでお問い合わせ">
-        メールでお問い合わせ
-      </a>
+      <form class="contact-form"
+            action="/api/contact"
+            method="POST"
+            novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="cf-name">お名前</label>
+            <input id="cf-name" class="form-input" type="text" name="name"
+                   placeholder="山田 太郎" required autocomplete="name" />
+          </div>
+          <div class="form-group">
+            <label for="cf-email">メールアドレス</label>
+            <input id="cf-email" class="form-input" type="email" name="email"
+                   placeholder="your@email.com" required autocomplete="email" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="cf-msg">お問い合わせ内容</label>
+          <textarea id="cf-msg" class="form-textarea" name="message" rows="4"
+                    placeholder="どんな小さなことでもお気軽にどうぞ。" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg form-submit">送信する →</button>
+        <p class="form-success" hidden>✓ ありがとうございます。近日中にご返信いたします。</p>
+        <p class="form-error" hidden>送信に失敗しました。時間をおいて再度お試しください。</p>
+      </form>
       <noscript>
-        <p class="cta-noscript">contact [at] bluecrow365 [dot] com</p>
+        <p class="cta-noscript">JavaScriptを有効にするとフォームが使えます。</p>
       </noscript>
     </div>
   </section>
@@ -337,11 +355,11 @@
   <div class="container footer-inner">
     <div class="footer-brand">
       <span class="logo-mark" aria-hidden="true"></span>
-      <span>BlueCrow<span class="logo-accent">365</span></span>
+      <span>bluecrow<span class="logo-accent"> Studio</span></span>
     </div>
-    <p class="copyright">© 2026 BlueCrow365. ご覧いただきありがとうございます。</p>
+    <p class="copyright">© 2026 bluecrow Studio. ご覧いただきありがとうございます。</p>
 
-    <!-- カラスSVG（飛んでいる姿） -->
+    <!-- カラスSVG（かわいい飛翔） -->
     <span class="footer-crow" aria-hidden="true">
       <svg viewBox="0 0 96 60" xmlns="http://www.w3.org/2000/svg">
         <defs>
@@ -351,64 +369,51 @@
           </linearGradient>
           <linearGradient id="wingGrad" x1="0%" y1="100%" x2="0%" y2="0%">
             <stop offset="0%" stop-color="#0052FF"/>
-            <stop offset="100%" stop-color="#0078FF"/>
+            <stop offset="100%" stop-color="#5599FF"/>
           </linearGradient>
         </defs>
 
-        <!-- 尾羽（後方に伸びる、先端ギザギザ） -->
-        <path d="M22 28
-                 L4 22
-                 L12 28
-                 L4 30
-                 L12 32
-                 L4 38
-                 L22 32 Z"
-              fill="#0033A8"/>
+        <!-- 尾羽 -->
+        <path d="M22 28 L5 22 L13 28 L5 30 L13 32 L5 38 L22 32 Z" fill="#0033A8"/>
 
-        <!-- 上向きの翼（前方に大きく羽ばたく） -->
-        <path d="M30 28
-                 Q26 4 50 4
-                 Q56 14 50 26
-                 Q44 30 38 30
-                 Q32 30 30 28 Z"
+        <!-- 上翼（ふっくら丸め） -->
+        <path d="M30 28 Q24 4 50 5 Q57 15 50 27 Q44 31 37 31 Q31 31 30 28 Z"
               fill="url(#wingGrad)"/>
-        <!-- 上翼の羽根の溝 -->
-        <path d="M32 10 L42 22" stroke="#0033A8" stroke-width="0.8" opacity="0.5" fill="none"/>
-        <path d="M40 6 L46 20" stroke="#0033A8" stroke-width="0.8" opacity="0.5" fill="none"/>
-        <path d="M48 6 L50 22" stroke="#0033A8" stroke-width="0.8" opacity="0.4" fill="none"/>
+        <path d="M32 11 L42 23" stroke="#0033A8" stroke-width="0.8" opacity="0.45" fill="none"/>
+        <path d="M41 7 L46 21" stroke="#0033A8" stroke-width="0.8" opacity="0.4" fill="none"/>
+        <path d="M49 6 L50 22" stroke="#0033A8" stroke-width="0.8" opacity="0.35" fill="none"/>
 
-        <!-- 胴体（横長の流線型） -->
-        <ellipse cx="44" cy="30" rx="22" ry="6" fill="url(#crowGrad)"/>
+        <!-- 胴体（ぷっくり） -->
+        <ellipse cx="44" cy="30" rx="22" ry="7.5" fill="url(#crowGrad)"/>
 
-        <!-- 下向きの翼（後方に伸びる） -->
-        <path d="M30 32
-                 Q24 52 44 54
-                 Q52 46 50 34
-                 Q44 30 38 30
-                 Q32 32 30 32 Z"
+        <!-- 下翼 -->
+        <path d="M30 32 Q24 52 44 54 Q53 46 50 34 Q44 31 37 31 Q31 31 30 32 Z"
               fill="#0033A8"/>
-        <!-- 下翼の羽根の溝 -->
         <path d="M28 42 L38 38" stroke="#001F66" stroke-width="0.8" opacity="0.5" fill="none"/>
-        <path d="M32 48 L42 42" stroke="#001F66" stroke-width="0.8" opacity="0.4" fill="none"/>
+        <path d="M32 49 L42 43" stroke="#001F66" stroke-width="0.8" opacity="0.4" fill="none"/>
 
-        <!-- 頭 -->
-        <circle cx="64" cy="28" r="7" fill="#0052FF"/>
+        <!-- 頭（大きめでまるまる） -->
+        <circle cx="64" cy="27" r="9" fill="#0052FF"/>
 
-        <!-- くちばし -->
-        <path d="M70 27
-                 L88 29
-                 L86 31
-                 L70 31 Z"
-              fill="#E5A93D"/>
-        <!-- くちばし合わせ目 -->
-        <path d="M70 29.5 L86 30" stroke="#B8841E" stroke-width="0.5" fill="none"/>
+        <!-- ほっぺブラッシュ -->
+        <ellipse cx="61" cy="31" rx="5" ry="2.5" fill="#FF8BC4" opacity="0.32"/>
 
-        <!-- 目 -->
-        <circle cx="65" cy="26" r="1.8" fill="#FAF6EF"/>
-        <circle cx="65.5" cy="26" r="1" fill="#0A1628"/>
+        <!-- 目（大きくてつぶらな瞳） -->
+        <circle cx="66" cy="24" r="3.5" fill="#FAF6EF"/>
+        <circle cx="66.8" cy="24.2" r="2.2" fill="#0A1628"/>
+        <circle cx="68" cy="23" r="0.9" fill="#ffffff"/>
+        <circle cx="66" cy="25.8" r="0.5" fill="#ffffff" opacity="0.65"/>
+
+        <!-- くちばし（短くかわいい） -->
+        <path d="M72 26 L83 28 L82 30 L72 30 Z" fill="#E5A93D"/>
+        <path d="M72 28 L82 28.6" stroke="#B8841E" stroke-width="0.5" fill="none"/>
 
         <!-- 胴体ハイライト -->
-        <path d="M30 28 Q44 26 58 28" stroke="#00D4FF" stroke-width="0.7" opacity="0.5" fill="none"/>
+        <path d="M30 28 Q44 25 59 27" stroke="#00D4FF" stroke-width="0.7" opacity="0.55" fill="none"/>
+
+        <!-- キラキラ -->
+        <circle cx="12" cy="14" r="1.2" fill="#E5A93D" opacity="0.65"/>
+        <circle cx="19" cy="8" r="0.8" fill="#00D4FF" opacity="0.7"/>
       </svg>
     </span>
   </div>
