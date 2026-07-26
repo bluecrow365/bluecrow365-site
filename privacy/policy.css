@@ -1,0 +1,138 @@
+/* ============================================
+   bluecrow Studio — プライバシーポリシー用スタイル
+   本体サイト (styles.css) とは独立。トークンだけ揃えている。
+   _headers の CSP が style-src 'self' のため、インライン style は使えない。
+   ============================================ */
+
+:root {
+  --blue: #0052FF;
+  --blue-deep: #0033A8;
+  --ink: #0A1628;
+  --ink-soft: #334155;
+  --muted: #6B7280;
+  --bg: #FAF6EF;
+  --bg-card: #FFFBF3;
+  --bg-soft: #F4ECDF;
+  --line: #E5E9F2;
+  --radius: 16px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "Inter", "Noto Sans JP", -apple-system, BlinkMacSystemFont,
+               "Segoe UI", "Hiragino Sans", Meiryo, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.9;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 5rem;
+}
+
+.site-link {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--blue);
+  text-decoration: none;
+  margin-bottom: 2rem;
+}
+.site-link:hover { text-decoration: underline; }
+
+h1 {
+  font-size: 1.55rem;
+  line-height: 1.5;
+  letter-spacing: -.01em;
+  margin-bottom: .25rem;
+}
+
+h2 {
+  font-size: 1.15rem;
+  margin: 2.75rem 0 .75rem;
+  padding-bottom: .35rem;
+  border-bottom: 1px solid var(--line);
+}
+
+h3 {
+  font-size: 1rem;
+  margin: 1.85rem 0 .5rem;
+}
+
+p, ul { margin: .8rem 0; }
+ul { padding-left: 1.4rem; list-style: disc; }
+li { margin: .35rem 0; }
+
+a { color: var(--blue); }
+a:hover { text-decoration: none; }
+
+.updated {
+  color: var(--muted);
+  font-size: .9rem;
+  margin-bottom: 1.75rem;
+}
+
+.lang-switch {
+  font-size: .92rem;
+  padding: .65rem .95rem;
+  margin-bottom: 2rem;
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+.summary {
+  padding: 1.1rem 1.2rem;
+  margin: 1.75rem 0;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--blue);
+  border-radius: var(--radius);
+}
+.summary > :first-child { margin-top: 0; }
+.summary > :last-child { margin-bottom: 0; }
+
+.table-wrap { overflow-x: auto; margin: 1.1rem 0; }
+table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 28rem;
+  font-size: .95rem;
+}
+th, td {
+  border: 1px solid var(--line);
+  padding: .55rem .75rem;
+  text-align: left;
+  vertical-align: top;
+}
+th { background: var(--bg-soft); font-weight: 700; }
+
+code {
+  background: var(--bg-soft);
+  padding: .1rem .35rem;
+  border-radius: 4px;
+  font-size: .9em;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin: 4rem 0 3rem;
+}
+
+footer {
+  margin-top: 3.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: .88rem;
+}
+
+@media (max-width: 520px) {
+  .wrap { padding: 2rem 1rem 4rem; }
+  h1 { font-size: 1.35rem; }
+}

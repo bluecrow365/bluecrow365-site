@@ -16,8 +16,8 @@
     <rect width="80" height="80" rx="20" fill="url(#mark)"/>
     <path d="M40 16 L64 40 L40 64 L16 40 Z" fill="#0052FF"/>
   </g>
-  <text x="220" y="280" font-family="'Noto Sans JP','Helvetica Neue',Arial,sans-serif" font-weight="800" font-size="64" fill="#FFFFFF" letter-spacing="-1">BlueCrow365</text>
-  <text x="120" y="380" font-family="'Noto Sans JP','Helvetica Neue',Arial,sans-serif" font-weight="800" font-size="56" fill="#FFFFFF">AIと一緒に、お仕事をちょっと楽に。</text>
-  <text x="120" y="450" font-family="'Noto Sans JP','Helvetica Neue',Arial,sans-serif" font-weight="400" font-size="28" fill="#FFFFFF" opacity="0.85">ホームページ制作 / 業務効率化アプリ / AI活用のご相談</text>
-  <text x="120" y="540" font-family="'Noto Sans JP','Helvetica Neue',Arial,sans-serif" font-weight="600" font-size="22" fill="#FFFFFF" opacity="0.7">bluecrow365.com</text>
+  <text x="220" y="280" font-family="'Noto Sans JP','Helvetica Neue',Arial,sans-serif" font-weight="800" font-size="64" fill="#FFFFFF" letter-spacing="-1">bluecrow Studio</text>
+  <text x="120" y="380" font-family="'Noto Sans JP','Helvetica Neue',Arial,sans-serif" font-weight="800" font-size="56" fill="#FFFFFF">つくったものを、お届けしています。</text>
+  <text x="120" y="450" font-family="'Noto Sans JP','Helvetica Neue',Arial,sans-serif" font-weight="400" font-size="28" fill="#FFFFFF" opacity="0.85">Androidアプリ開発 / ホームページ制作 / 業務効率化のご相談</text>
+  <text x="120" y="540" font-family="'Noto Sans JP','Helvetica Neue',Arial,sans-serif" font-weight="600" font-size="22" fill="#FFFFFF" opacity="0.7">blue-crow365.com</text>
 </svg>

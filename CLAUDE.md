@@ -1,15 +1,35 @@
-# BlueCrow365 — blue-crow365.com
+# bluecrow Studio — blue-crow365.com
 
-AI を活用した (1) ホームページ制作 (2) 業務効率化アプリ開発 (3) AI活用サービス を提供する
-自社サイト。静的 HTML/CSS/JS の 3 ファイル構成。
+**自社Androidアプリの紹介**を主役に、あわせて (1) ホームページ制作 (2) 業務効率化アプリ開発
+(3) AI活用サービス の受託相談も受ける自社サイト。静的 HTML/CSS/JS 構成。
+
+サイト名は **bluecrow Studio**（Google Play のデベロッパー名もこれに揃える方針。2026-07-27決定）。
+旧称「BlueCrow365」表記は使わない。ドメインは **blue-crow365.com**（ハイフンあり）。
+`bluecrow365.com`（ハイフンなし）は誤りなので canonical / OGP / JSON-LD に書かないこと。
 
 ## 構成
 
-- `index.html` — 全セクション (Hero / Services / Why / CTA / Footer) を含む単一ページ
+- `index.html` — 単一ページ。セクション順は
+  Hero / About / **Apps** / Services / Process / Mindset / Contact / Footer
 - `styles.css` — メインスタイル。`:root` にデザイントークン集約
 - `script.js` — ヘッダースクロール検出 + IntersectionObserver によるフェードイン
+- `app-ads.txt` — AdMob 用（`pub-3979308420686542`）。Play の「ウェブサイト」欄に
+  このドメインを入れると AdMob がここをクロールする。**消さないこと**
+- `privacy/` — アプリのプライバシーポリシー
+  - `nennrei.html` — 年齢表アプリ（日英1ページ）。Play Console に登録するURLはこれ
+  - `policy.css` — ポリシー専用スタイル（本体 `styles.css` とは独立）
+  - スラパズ！のポリシーは `bluecrow365.github.io/privacy.html` に置いたまま外部リンクしている
+    （テスト配信中のため Play 登録済みURLを動かさない方針）
 
 フレームワーク・ビルドプロセス不使用。npm も package.json も置かない方針。
+
+## Apps セクションの扱い
+
+- 既存の `.works` グリッド + `.work-card` を流用している（アプリ用の専用CSSは作っていない）
+- カード内のリンクは `.work-links`、補足行は `.work-meta`（`styles.css` の works ブロック内に定義）
+- スラパズ！のサムネイルに**水着ステージ・ご褒美画像は使わない**
+  （ゲーム側の `release_checklist_policy.md` の方針と、B2B受託ページとしての体裁の両方から）
+- アプリアイコン画像を載せる場合は CSP が `img-src 'self' data:` なのでリポジトリ内に置く
 
 ## プレビュー / デプロイ
 

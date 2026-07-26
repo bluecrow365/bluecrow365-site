@@ -1,5 +1,5 @@
 /* ============================================
-   BlueCrow365 — main stylesheet
+   bluecrow Studio — main stylesheet
    ============================================ */
 
 :root {
@@ -496,6 +496,28 @@ a.work-card { cursor: pointer; }
   line-height: 1.85;
   margin: 0;
 }
+.work-meta {
+  font-size: 12.5px;
+  color: var(--muted);
+  margin-top: 14px;
+}
+.work-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  margin-top: auto;
+  padding-top: 18px;
+  font-size: 13px;
+  font-weight: 600;
+}
+.work-links a {
+  color: var(--blue);
+  border-bottom: 1px solid rgba(0, 82, 255, .28);
+  transition: border-color .2s, color .2s;
+}
+.work-links a:hover {
+  border-bottom-color: var(--blue);
+}
 
 /* ============ PROCESS (ご依頼の流れ) ============ */
 .process-list {
@@ -733,6 +755,21 @@ a.work-card { cursor: pointer; }
 .copyright {
   font-size: 13px;
   color: var(--muted);
+}
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 20px;
+  font-size: 13px;
+}
+.footer-links a {
+  color: var(--muted);
+  border-bottom: 1px solid transparent;
+  transition: color .2s, border-color .2s;
+}
+.footer-links a:hover {
+  color: var(--blue);
+  border-bottom-color: rgba(0, 82, 255, .3);
 }
 .footer-crow {
   position: absolute;
