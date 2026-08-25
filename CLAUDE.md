@@ -19,7 +19,7 @@
   - `nennrei.html` — 年齢表アプリ（日英1ページ）。Play Console に登録するURLはこれ
   - `policy.css` — ポリシー専用スタイル（本体 `styles.css` とは独立）
   - スラパズ！のポリシーは `bluecrow365.github.io/privacy.html` に置いたまま外部リンクしている
-    （テスト配信中のため Play 登録済みURLを動かさない方針）
+    （Play に登録済みのURLを動かさない方針。2026-08 に製品版公開されたあとも同じ）
 
 フレームワーク・ビルドプロセス不使用。npm も package.json も置かない方針。
 
@@ -29,7 +29,9 @@
 - カード内のリンクは `.work-links`、補足行は `.work-meta`（`styles.css` の works ブロック内に定義）
 - スラパズ！のサムネイルに**水着ステージ・ご褒美画像は使わない**
   （ゲーム側の `release_checklist_policy.md` の方針と、B2B受託ページとしての体裁の両方から）
-- アプリアイコン画像を載せる場合は CSP が `img-src 'self' data:` なのでリポジトリ内に置く
+- アプリアイコン画像は `assets/apps/` に置く（CSP が `img-src 'self' data:` なので外部URL不可）。
+  サムネイルに出すときは `.work-thumb-app` を使う（グラデ背景の中央に角丸＋影で配置）。
+  Play用の512pxをそのまま入れると重いので、写真調のものは256pxのJPEGに落とす
 
 ## プレビュー / デプロイ
 
@@ -99,6 +101,11 @@ python -m http.server 8000
 ## セキュリティ / SEO
 
 - `_headers` で CSP / HSTS / X-Frame-Options 等を Cloudflare Pages に投入
+- **CSS/JS を編集したら参照側の `?v=` を必ず上げる**。`_headers` が `/*.css` `/*.js` に
+  `max-age=31536000, immutable` を付けているため、クエリを変えないと再訪問者に1年間更新が届かない。
+  HTML だけ `max-age=600` で先に更新されるので「新HTML + 旧CSS」で**表示が崩れる**
+  (2026-08-25 に `styles.css` で実際に発生)。現在: `styles.css?v=2` / `script.js?v=2` /
+  `privacy/policy.css?v=1`。詳細と切り分け方は Obsidian [[immutable-cache-static-site-js]]
 - 外部スクリプト追加時は CSP の `script-src` を更新する
 - メールアドレスは `js-mail` クラス + `data-user` / `data-domain` で難読化 (`script.js` で組み立て)。`<noscript>` フォールバックあり
 - OGP 画像 (`og-image.svg`) は SVG。X (Twitter) で確実にプレビューを出したい場合は PNG (1200x630) を別途用意して `og:image` を差し替える
