@@ -5,6 +5,7 @@
    ============================================ */
 
 :root {
+  color-scheme: light dark;
   --blue: #0052FF;
   --blue-deep: #0033A8;
   --ink: #0A1628;
@@ -135,4 +136,20 @@ footer {
 @media (max-width: 520px) {
   .wrap { padding: 2rem 1rem 4rem; }
   h1 { font-size: 1.35rem; }
+}
+
+/* ============ DARK MODE ============
+   本体 styles.css と同じ考え方。トークンだけ差し替える。 */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --blue: #7AB0FF;
+    --blue-deep: #A9CBFF;
+    --ink: #E9EEF7;
+    --ink-soft: #B6C2D6;
+    --muted: #8C99AE;
+    --bg: #0B1524;
+    --bg-card: #131E32;
+    --bg-soft: #16233A;
+    --line: #24324C;
+  }
 }

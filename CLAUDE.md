@@ -48,12 +48,29 @@ python -m http.server 8000
 ## デザイン規約
 
 ### カラートークン (`styles.css` の `:root`)
-- `--blue: #0052FF` / `--cyan: #00D4FF` — ブランドカラー
+- `--blue: #0052FF` / `--cyan: #00D4FF` — ブランドカラー。**面の塗り専用**でダークでも変えない
 - `--grad` — 上記2色の135°グラデーション。テキスト・アイコン・アクセント帯で使用
-- `--ink: #0A1628` — 主要テキスト・ダーク背景
+- `--blue-text` — **文字として置く青**。`--blue` はダーク時にコントラスト不足なので、
+  リンク・Eyebrow・ラベル等は必ずこちらを使う（ダーク時だけ `#7AB0FF` に切り替わる）
+- `--ink: #0A1628` — 主要テキスト**専用**。ダーク時は明色に反転する
+- `--surface-dark` — 「濃紺を**背景として**使う」面（btn-primary / nav-cta / card-feature / cta /
+  work-thumb-dark）。`--ink` と兼用しないこと。兼用するとダーク反転で文字と背景が同時に裏返って壊れる
+- `--ink-fixed` — 反転しない濃紺。白い面の上に置く文字用（例: `.cta .btn-primary`）
 - `--ink-soft` / `--muted` — 副次テキスト
 
 新色を追加するときも `:root` に集約し、各セレクタにハードコードしない。
+
+### ダークモード
+`prefers-color-scheme: dark` に対応済み（`styles.css` / `privacy/policy.css` とも末尾の
+DARK MODE ブロック）。**トークンを差し替えるだけ**で全体が追従する設計なので、
+`:root` に色を足したらダーク時の値もそこに必ず書くこと。ライト時の値は対応前と1色も変えていない。
+
+- `:root` に `color-scheme: light dark` を宣言済み（Chrome の自動ダーク化に勝手に反転されないため）
+- 波形仕切りの SVG は `fill` 属性より CSS が優先されるので、色は
+  `.divider-wave-soft / -sand svg path` の CSS 側で決めている。HTML の `fill=` は触らなくてよい
+- 確認方法: `styles.css` をコピーして `@media (prefers-color-scheme: dark) {` を
+  `@media all {`（ダーク強制）/ `@media (min-width: 999999px) {`（ライト強制）に置換し、
+  `python -m http.server` で両方見る。`file://` は Chrome 拡張から開けない
 
 ### フェードイン
 要素に `data-fade` を付けると、`script.js` の IntersectionObserver が `.in` を付与して
@@ -104,8 +121,8 @@ python -m http.server 8000
 - **CSS/JS を編集したら参照側の `?v=` を必ず上げる**。`_headers` が `/*.css` `/*.js` に
   `max-age=31536000, immutable` を付けているため、クエリを変えないと再訪問者に1年間更新が届かない。
   HTML だけ `max-age=600` で先に更新されるので「新HTML + 旧CSS」で**表示が崩れる**
-  (2026-08-25 に `styles.css` で実際に発生)。現在: `styles.css?v=2` / `script.js?v=2` /
-  `privacy/policy.css?v=1`。詳細と切り分け方は Obsidian [[immutable-cache-static-site-js]]
+  (2026-08-25 に `styles.css` で実際に発生)。現在: `styles.css?v=3` / `script.js?v=2` /
+  `privacy/policy.css?v=2`。詳細と切り分け方は Obsidian [[immutable-cache-static-site-js]]
 - 外部スクリプト追加時は CSP の `script-src` を更新する
 - メールアドレスは `js-mail` クラス + `data-user` / `data-domain` で難読化 (`script.js` で組み立て)。`<noscript>` フォールバックあり
 - OGP 画像 (`og-image.svg`) は SVG。X (Twitter) で確実にプレビューを出したい場合は PNG (1200x630) を別途用意して `og:image` を差し替える

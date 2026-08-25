@@ -3,20 +3,43 @@
    ============================================ */
 
 :root {
+  /* ライト時の値。ダーク時の差し替えはファイル末尾の DARK MODE ブロックにまとめてある */
+  color-scheme: light dark;
+
+  /* ブランド色（ダークでも変えない。グラデ・アイコン・面の塗りに使う） */
   --blue: #0052FF;
   --blue-deep: #0033A8;
   --cyan: #00D4FF;
   --yellow: #E5A93D;
+
+  /* 文字として置く青。#0052FF は暗い地の上ではコントラスト不足なのでダーク時だけ明るくする */
+  --blue-text: #0052FF;
+  --blue-line: rgba(0, 82, 255, .28);
+  --tag-bg: rgba(0, 82, 255, .08);
+
   --yellow-soft: #FFF4D6;
+  --yellow-ink: #8A6A1E;
   --sand: #F5EBE0;
+  --sand-2: #EDE0CC;
   --sand-deep: #E8D8C3;
+
   --ink: #0A1628;
   --ink-soft: #334155;
+  /* 反転しない濃紺。白い面の上に置く文字用（ダーク時も白ボタンの中身は暗いまま） */
+  --ink-fixed: #0A1628;
   --muted: #6B7280;
+
   --bg: #FAF6EF;
   --bg-soft: #F4ECDF;
   --bg-card: #FFFBF3;
   --line: #E5E9F2;
+  /* 「濃紺を背景として使う」面。--ink は文字色専任なので混ぜないこと */
+  --surface-dark: #0A1628;
+  --header-bg: rgba(250, 246, 239, .85);
+  --grid-line: rgba(10, 22, 40, .04);
+  --feature-bg: rgba(255, 255, 255, .55);
+  --feature-border: rgba(232, 216, 195, .5);
+
   --grad: linear-gradient(135deg, var(--blue) 0%, var(--cyan) 100%);
   --grad-warm: linear-gradient(135deg, var(--yellow) 0%, #F2C76B 100%);
   --shadow-sm: 0 2px 12px rgba(10, 22, 40, .06);
@@ -56,7 +79,7 @@ ul { list-style: none; }
   font-weight: 600;
   letter-spacing: .15em;
   text-transform: uppercase;
-  color: var(--blue);
+  color: var(--blue-text);
   margin-bottom: 16px;
 }
 .eyebrow-warm { color: var(--yellow); }
@@ -77,7 +100,7 @@ ul { list-style: none; }
 /* ============ HEADER ============ */
 .site-header {
   position: sticky; top: 0; z-index: 50;
-  background: rgba(250, 246, 239, .85);
+  background: var(--header-bg);
   backdrop-filter: saturate(180%) blur(14px);
   -webkit-backdrop-filter: saturate(180%) blur(14px);
   border-bottom: 1px solid transparent;
@@ -109,16 +132,16 @@ ul { list-style: none; }
   background: #fff;
   clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
 }
-.logo-accent { color: var(--blue); }
+.logo-accent { color: var(--blue-text); }
 
 .nav {
   display: flex; align-items: center; gap: 32px;
   font-size: 15px; font-weight: 600;
 }
 .nav a { color: var(--ink-soft); transition: color .2s; }
-.nav a:hover { color: var(--blue); }
+.nav a:hover { color: var(--blue-text); }
 .nav .nav-cta {
-  background: var(--ink);
+  background: var(--surface-dark);
   color: #fff;
   padding: 10px 18px;
   border-radius: 999px;
@@ -149,8 +172,8 @@ ul { list-style: none; }
   content: "";
   position: absolute; inset: 0;
   background-image:
-    linear-gradient(rgba(10, 22, 40, .04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(10, 22, 40, .04) 1px, transparent 1px);
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
   background-size: 56px 56px;
   mask-image: radial-gradient(ellipse 100% 60% at 50% 40%, #000 30%, transparent 80%);
   -webkit-mask-image: radial-gradient(ellipse 100% 60% at 50% 40%, #000 30%, transparent 80%);
@@ -223,7 +246,7 @@ ul { list-style: none; }
   white-space: nowrap;
 }
 .btn-primary {
-  background: var(--ink);
+  background: var(--surface-dark);
   color: #fff;
   box-shadow: 0 8px 24px rgba(10, 22, 40, .2);
 }
@@ -238,8 +261,8 @@ ul { list-style: none; }
   border: 1.5px solid var(--line);
 }
 .btn-ghost:hover {
-  border-color: var(--blue);
-  color: var(--blue);
+  border-color: var(--blue-text);
+  color: var(--blue-text);
   transform: translateY(-2px);
 }
 .btn-lg { height: 60px; padding: 0 36px; font-size: 16px; }
@@ -248,7 +271,7 @@ ul { list-style: none; }
 .section { padding: 110px 0; position: relative; }
 .section-alt { background: var(--bg-soft); }
 .section-sand {
-  background: linear-gradient(180deg, var(--sand) 0%, #EDE0CC 100%);
+  background: linear-gradient(180deg, var(--sand) 0%, var(--sand-2) 100%);
 }
 .section-head { text-align: center; max-width: 720px; margin: 0 auto 64px; }
 .section-title {
@@ -272,6 +295,9 @@ ul { list-style: none; }
   line-height: 0;
 }
 .divider-wave svg { width: 100%; height: 100%; display: block; }
+/* svg の fill 属性より CSS 側が優先されるので、色の指定はここに集約する */
+.divider-wave-soft svg path { fill: var(--bg-soft); }
+.divider-wave-sand svg path { fill: var(--sand); }
 
 /* ============ INTRO (はじめまして) ============ */
 .intro {
@@ -311,7 +337,7 @@ ul { list-style: none; }
   margin-top: 24px;
   padding: 6px 14px;
   background: var(--yellow-soft);
-  color: #8A6A1E;
+  color: var(--yellow-ink);
   border-radius: 999px;
   font-size: 13px;
   font-weight: 600;
@@ -355,9 +381,9 @@ ul { list-style: none; }
 }
 .card:hover::before { transform: scaleX(1); }
 .card-feature {
-  background: var(--ink);
+  background: var(--surface-dark);
   color: #fff;
-  border-color: var(--ink);
+  border-color: var(--surface-dark);
 }
 .card-feature .card-desc { color: rgba(255,255,255, .75); }
 .card-feature .card-list li { color: rgba(255,255,255, .85); }
@@ -367,7 +393,7 @@ ul { list-style: none; }
 
 .card-num {
   font-size: 13px; font-weight: 700; letter-spacing: .15em;
-  color: var(--blue);
+  color: var(--blue-text);
   margin-bottom: 16px;
 }
 .card-title {
@@ -392,7 +418,7 @@ ul { list-style: none; }
   content: "";
   position: absolute; left: 0; top: 11px;
   width: 8px; height: 2px;
-  background: var(--blue);
+  background: var(--blue-text);
   border-radius: 2px;
 }
 
@@ -445,7 +471,7 @@ a.work-card { cursor: pointer; }
   background: var(--grad);
 }
 .work-thumb-dark {
-  background: linear-gradient(135deg, var(--ink) 0%, #1B2D4C 100%);
+  background: linear-gradient(135deg, var(--surface-dark) 0%, #1B2D4C 100%);
 }
 .work-thumb-icon {
   font-size: 56px;
@@ -484,8 +510,8 @@ a.work-card { cursor: pointer; }
   font-weight: 700;
   letter-spacing: .12em;
   text-transform: uppercase;
-  color: var(--blue);
-  background: rgba(0, 82, 255, .08);
+  color: var(--blue-text);
+  background: var(--tag-bg);
   padding: 4px 10px;
   border-radius: 999px;
   margin-bottom: 12px;
@@ -522,12 +548,12 @@ a.work-card { cursor: pointer; }
   font-weight: 600;
 }
 .work-links a {
-  color: var(--blue);
-  border-bottom: 1px solid rgba(0, 82, 255, .28);
+  color: var(--blue-text);
+  border-bottom: 1px solid var(--blue-line);
   transition: border-color .2s, color .2s;
 }
 .work-links a:hover {
-  border-bottom-color: var(--blue);
+  border-bottom-color: var(--blue-text);
 }
 
 /* ============ PROCESS (ご依頼の流れ) ============ */
@@ -560,7 +586,7 @@ a.work-card { cursor: pointer; }
   background: var(--bg-card);
   border: 2px solid var(--sand-deep);
   font-weight: 800; font-size: 22px;
-  color: var(--blue);
+  color: var(--blue-text);
   margin: 0 auto 18px;
   position: relative;
   transition: transform .3s, border-color .3s, color .3s;
@@ -600,8 +626,8 @@ a.work-card { cursor: pointer; }
   text-align: center;
   padding: 28px 20px;
   border-radius: var(--radius);
-  background: rgba(255, 255, 255, .55);
-  border: 1px solid rgba(232, 216, 195, .5);
+  background: var(--feature-bg);
+  border: 1px solid var(--feature-border);
   transition: transform .3s, box-shadow .3s;
 }
 .feature:hover {
@@ -634,7 +660,7 @@ a.work-card { cursor: pointer; }
 
 /* ============ CTA ============ */
 .cta {
-  background: var(--ink);
+  background: var(--surface-dark);
   color: #fff;
   position: relative;
   overflow: hidden;
@@ -666,10 +692,10 @@ a.work-card { cursor: pointer; }
   margin-bottom: 40px;
 }
 .cta .btn-primary {
-  background: #fff; color: var(--ink);
+  background: #fff; color: var(--ink-fixed);
 }
 .cta .btn-primary:hover {
-  background: var(--yellow); color: var(--ink);
+  background: var(--yellow); color: var(--ink-fixed);
 }
 .cta-noscript {
   margin-top: 16px;
@@ -779,8 +805,8 @@ a.work-card { cursor: pointer; }
   transition: color .2s, border-color .2s;
 }
 .footer-links a:hover {
-  color: var(--blue);
-  border-bottom-color: rgba(0, 82, 255, .3);
+  color: var(--blue-text);
+  border-bottom-color: var(--blue-line);
 }
 .footer-crow {
   position: absolute;
@@ -835,4 +861,51 @@ a.work-card { cursor: pointer; }
   }
   [data-fade] { opacity: 1; transform: none; }
   .float-shape, .footer-crow { animation: none; }
+}
+
+/* ============ DARK MODE ============
+   OS/ブラウザがダークのときの配色。原則ここでトークンを差し替えるだけで全体が追従する。
+   :root に新しい色を足したら、ダーク時の値もここに必ず書くこと。 */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --blue-text: #7AB0FF;
+    --blue-line: rgba(122, 176, 255, .35);
+    --tag-bg: rgba(122, 176, 255, .14);
+
+    --yellow: #F0B851;
+    --yellow-soft: #3A2E14;
+    --yellow-ink: #F3CE7C;
+    --sand: #131D2E;
+    --sand-2: #0E1725;
+    --sand-deep: #2B3750;
+
+    --ink: #E9EEF7;
+    --ink-soft: #B6C2D6;
+    --muted: #8C99AE;
+
+    --bg: #0B1524;
+    --bg-soft: #101B2C;
+    --bg-card: #131E32;
+    --line: #24324C;
+    --surface-dark: #1B2A45;
+    --header-bg: rgba(11, 21, 36, .85);
+    --grid-line: rgba(255, 255, 255, .05);
+    --feature-bg: rgba(255, 255, 255, .04);
+    --feature-border: rgba(255, 255, 255, .09);
+
+    --shadow-sm: 0 2px 12px rgba(0, 0, 0, .5);
+    --shadow-md: 0 12px 40px rgba(0, 0, 0, .55);
+    --shadow-warm: 0 12px 30px rgba(0, 0, 0, .45);
+  }
+
+  /* 濃紺ボタンは暗い地の上で沈むため、主ボタンだけブランド青に置き換える
+     （.cta .btn-primary は詳細度が上なので白ボタンのまま残る） */
+  .btn-primary { background: var(--blue); box-shadow: 0 8px 24px rgba(0, 82, 255, .35); }
+  .btn-primary:hover { background: var(--cyan); color: var(--ink-fixed); }
+  .nav .nav-cta { background: var(--blue); }
+  .nav .nav-cta:hover { background: var(--cyan); color: var(--ink-fixed); }
+
+  /* 装飾（星・カラス）は濃紺で描かれていて暗い地に埋もれるので持ち上げる */
+  .float-shape.star svg,
+  .footer-crow { filter: brightness(1.3); }
 }
