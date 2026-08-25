@@ -457,6 +457,17 @@ a.work-card { cursor: pointer; }
 .work-thumb-warm .work-thumb-icon { color: #fff; }
 .work-thumb-dark .work-thumb-icon { color: var(--yellow); }
 
+/* アプリアイコンをサムネイル中央に置くとき */
+.work-thumb-app {
+  position: relative;
+  z-index: 1;
+  width: clamp(72px, 26%, 104px);
+  height: auto;
+  aspect-ratio: 1 / 1;
+  border-radius: 22%;
+  box-shadow: 0 10px 26px rgba(10, 22, 40, .3);
+}
+
 .work-card.placeholder .work-thumb-icon {
   opacity: .9;
 }
