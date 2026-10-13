@@ -1,0 +1,18 @@
+# wrangler.toml の [assets] directory = "." はリポジトリ直下をそのまま配信するため、
+# ここに書かないものは全部 https://blue-crow365.com/ から誰でも取得できる。
+# 2026-10-14 まで .git/ ・ src/worker.js ・ CLAUDE.md などが公開されていた。
+# 公開しないファイルを足したら、ここにも足すこと。
+.git
+.git/
+.github/
+.devcontainer/
+.wrangler/
+node_modules/
+src/
+wrangler.toml
+.gitattributes
+.gitignore
+.assetsignore
+CLAUDE.md
+*.md
+samples/.gitkeep

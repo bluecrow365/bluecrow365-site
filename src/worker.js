@@ -26,7 +26,8 @@ async function handleContact(request, env) {
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
       return Response.json({ error: "invalid_email" }, { status: 400 });
 
-    const safeName  = name.replace(/[\r\n]/g, " ");
+    // Reply-To の表示名に入るので、アドレスを差し込める記号 (< > , ; " \) も落とす
+    const safeName  = name.replace(/[\r\n]/g, " ").replace(/[<>,;"\\]/g, "");
     const safeEmail = email.replace(/[\r\n]/g, "");
 
     const subjectText  = `[bluecrow Studio] お問い合わせ: ${safeName}`;
