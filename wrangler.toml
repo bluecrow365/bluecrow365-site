@@ -5,6 +5,21 @@ compatibility_date = "2024-09-23"
 [assets]
 directory = "."
 
+# Worker を通ったリクエストを Workers Logs に残す(ダッシュボードで検索できる)。
+# 存在するアセットへのリクエストは Worker を通らないので記録されない
+[observability]
+enabled = true
+
+# 問い合わせの連投対策。IP ごとに 60 秒あたり 3 回まで(period は 10 か 60 のみ)。
+# カウンタは Cloudflare の拠点ごとなので厳密な上限ではない
+[[ratelimits]]
+name = "CONTACT_LIMITER"
+namespace_id = "1001"
+
+  [ratelimits.simple]
+  limit = 3
+  period = 60
+
 [[send_email]]
 name = "CONTACT_EMAIL"
 destination_address = "momizi20152512@gmail.com"

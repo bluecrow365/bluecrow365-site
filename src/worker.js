@@ -14,6 +14,13 @@ export default {
 };
 
 async function handleContact(request, env) {
+  // 連投対策。バインディングが無い環境(ローカル等)では素通しにする
+  if (env.CONTACT_LIMITER) {
+    const ip = request.headers.get("CF-Connecting-IP") ?? "unknown";
+    const { success } = await env.CONTACT_LIMITER.limit({ key: ip });
+    if (!success) return Response.json({ error: "rate_limited" }, { status: 429 });
+  }
+
   try {
     const formData = await request.formData();
     const name    = String(formData.get("name")    ?? "").trim().slice(0, 200);
