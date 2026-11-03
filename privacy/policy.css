@@ -6,7 +6,7 @@
 
 :root {
   color-scheme: light dark;
-  --blue: #0052FF;
+  --blue: #2A62C9;   /* トップの --blue-t と同じ。文字に使うので AA を満たす青 */
   --blue-deep: #0033A8;
   --ink: #0A1628;
   --ink-soft: #334155;
@@ -142,7 +142,7 @@ footer {
    本体 styles.css と同じ考え方。トークンだけ差し替える。 */
 @media (prefers-color-scheme: dark) {
   :root {
-    --blue: #7AB0FF;
+    --blue: #A3C1EC;
     --blue-deep: #A9CBFF;
     --ink: #E9EEF7;
     --ink-soft: #B6C2D6;
