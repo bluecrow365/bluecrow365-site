@@ -60,6 +60,8 @@ python -m http.server 8000
 2026-10-14 まで `.git/`・`src/worker.js`・この `CLAUDE.md` まで誰でも取得できた。**公開しないファイルを足したら
 `.assetsignore` にも足す**こと。デプロイ後は `https://blue-crow365.com/.git/HEAD` が 200 でないことを確かめる。
 問い合わせ API は IP ごとに 60 秒 3 回まで(`[[ratelimits]]`)。Workers Logs は有効(`[observability]`)
+`[assets]` の `binding = "ASSETS"` は消さない。無いと `env.ASSETS` が undefined になり、アセットに無いパスが 404 ではなく
+500 (error code 1101) になる(2026-11-03 まで実際にそうだった)。空の POST が 500 なのは worker.js の try の仕様
 
 ## デザイン規約
 
