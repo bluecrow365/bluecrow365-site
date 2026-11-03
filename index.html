@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="bluecrow Studio — Androidアプリをつくっています。あわせて、ホームページ制作・業務効率化アプリ開発のご相談も承っています。個人で、ひとつずつ丁寧に。" />
-<meta name="theme-color" content="#0052FF" />
+<meta name="description" content="bluecrow Studio — 家族の年齢を数えてくれるアドレス帳「年齢表」などのアプリをつくっています。ホームページ制作や業務の小さなアプリのご相談も承ります。" />
+<meta name="theme-color" content="#4A80E0" />
 <meta name="format-detection" content="telephone=no" />
 <title>bluecrow Studio — アプリをつくっています。</title>
 
@@ -29,8 +29,8 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Noto+Sans+JP:wght@400;600;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=3" />
+<link href="https://fonts.googleapis.com/css2?family=Murecho:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=4" />
 
 <script type="application/ld+json">
 {
@@ -40,7 +40,7 @@
   "url": "https://blue-crow365.com/",
   "logo": "https://blue-crow365.com/favicon.svg",
   "image": "https://blue-crow365.com/og-image.svg",
-  "description": "Androidアプリの開発と、ホームページ制作・業務効率化アプリ開発・AI活用のご相談を承る個人事業。",
+  "description": "アプリ「年齢表」「スラパズ！」の開発。あわせてホームページ制作・業務効率化アプリ・AI活用のご相談を承る個人事業。",
   "contactPoint": { "@type": "ContactPoint", "contactType": "customer service", "url": "https://blue-crow365.com/#contact" },
   "areaServed": "JP",
   "inLanguage": "ja"
@@ -49,410 +49,179 @@
 </head>
 <body>
 
-<header class="site-header">
-  <div class="container header-inner">
-    <a href="#" class="logo" aria-label="bluecrow Studio">
-      <span class="logo-mark" aria-hidden="true"></span>
-      <span class="logo-text">bluecrow<span class="logo-accent"> Studio</span></span>
-    </a>
-    <nav class="nav" aria-label="メインナビゲーション">
-      <a href="#about">はじめまして</a>
-      <a href="#apps">Apps</a>
-      <a href="#services">Services</a>
-      <a href="#process">流れ</a>
-      <a href="#contact" class="nav-cta">お問い合わせ</a>
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="#"><span class="mark" aria-hidden="true"></span>bluecrow Studio</a>
+    <nav class="nav" aria-label="ページ内の移動">
+      <a href="#apps">年齢表</a>
+      <a href="#puzzle">スラパズ！</a>
+      <a href="#services">制作のご相談</a>
+      <a class="nav-cta" href="#contact">お問い合わせ</a>
     </nav>
   </div>
 </header>
 
 <main>
-
-  <!-- HERO -->
   <section class="hero">
-    <div class="hero-bg" aria-hidden="true"></div>
-
-    <!-- 浮かぶ装飾図形 -->
-    <span class="float-shape s1" aria-hidden="true"></span>
-    <span class="float-shape s2" aria-hidden="true"></span>
-    <span class="float-shape s3" aria-hidden="true"></span>
-    <span class="float-shape s4" aria-hidden="true"></span>
-    <span class="float-shape star star-1" aria-hidden="true">
-      <svg viewBox="0 0 24 24" fill="#E5A93D"><path d="M12 2l2.4 6.6L21 9l-5.1 4.4L17.4 20 12 16.6 6.6 20l1.5-6.6L3 9l6.6-.4z"/></svg>
-    </span>
-    <span class="float-shape star star-2" aria-hidden="true">
-      <svg viewBox="0 0 24 24" fill="#0052FF" opacity="0.5"><path d="M12 2l2.4 6.6L21 9l-5.1 4.4L17.4 20 12 16.6 6.6 20l1.5-6.6L3 9l6.6-.4z"/></svg>
-    </span>
-
-    <div class="container hero-inner">
-      <p class="eyebrow" data-fade>Android App × Web × AI</p>
-      <h1 class="hero-title" data-fade>
-        つくったものを、<br />
-        <span class="grad">お届けしています。</span>
-      </h1>
-      <p class="hero-sub" data-fade>
-        Androidアプリの開発と、ホームページ制作・業務効率化のお手伝い。<br />
-        AIを学びながら、ひとつずつ丁寧に。
-      </p>
-      <div class="hero-cta" data-fade>
-        <a href="#apps" class="btn btn-primary">アプリを見る</a>
-        <a href="#contact" class="btn btn-ghost">制作のご相談 →</a>
-      </div>
-      <p class="hero-note" data-fade>個人で運営しています。背伸びせず、丁寧にお話しします。</p>
-    </div>
-  </section>
-
-  <!-- 波形仕切り -->
-  <div class="divider-wave divider-wave-soft" aria-hidden="true">
-    <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
-      <path d="M0,30 C240,55 480,5 720,30 C960,55 1200,5 1440,30 L1440,60 L0,60 Z"
-            fill="#F4ECDF"/>
-    </svg>
-  </div>
-
-  <!-- INTRO (はじめまして) -->
-  <section id="about" class="intro section-alt">
-    <div class="container intro-inner" data-fade>
-      <div class="intro-mark" aria-hidden="true">✦</div>
-      <p class="eyebrow eyebrow-warm">Hello</p>
-      <h2>はじめまして、bluecrow Studioです。</h2>
-      <p>
-        個人で運営している、ちいさな制作・開発のお店です。<br />
-        スマートフォン向けのアプリや、ホームページ・業務アプリを、AIの力も借りながら作っています。
-      </p>
-      <p>
-        AIに関してはまだ勉強中で、専門家を名乗れる立場ではありません。<br />
-        ただ、毎日触りながら「これはお客様のお役に立てそう」と思えたことを、<br />
-        丁寧にご提案するように心がけています。
-      </p>
-      <p>
-        大きな会社のような派手さはありませんが、<br />
-        その分、一人ひとりのご相談にじっくり向き合えると思っています。
-      </p>
-      <span class="intro-tag">＃ 学びながら、ご一緒に</span>
-    </div>
-  </section>
-
-  <!-- APPS (公開アプリ) -->
-  <section id="apps" class="section">
-    <div class="container">
-      <div class="section-head" data-fade>
-        <p class="eyebrow">Apps</p>
-        <h2 class="section-title">つくっているアプリ</h2>
-        <p class="section-lead">
-          Google Play で公開しているアプリです。
-          各アプリのプライバシーポリシーは、カードの下からご覧いただけます。
+    <div class="wrap hero-grid">
+      <div class="hero-text">
+        <p class="kicker">bluecrow Studio のアプリ</p>
+        <h1>家族の年齢、<br /><span class="nw">もう数えなくていい。</span></h1>
+        <p class="lead">
+          誕生日を一度入れれば、年齢は毎年ひとりでに最新に。
+          結婚記念日や免許証の更新も、近づいたら通知でお知らせします。
+        </p>
+        <p class="hero-links">
+          <a class="btn btn-light" href="https://play.google.com/store/apps/details?id=com.momizi.nennrei"
+             target="_blank" rel="noopener noreferrer">Google Play で入手</a>
+          <span class="soon">iPhone 版は準備中</span>
         </p>
       </div>
-
-      <div class="works">
-        <article class="work-card" data-fade>
-          <div class="work-thumb work-thumb-blue" aria-hidden="true">
-            <img class="work-thumb-app" src="/assets/apps/nennrei.png" alt=""
-                 width="256" height="256" loading="lazy" decoding="async">
-          </div>
-          <div class="work-body">
-            <p class="work-tag">Google Play で公開中</p>
-            <h3 class="work-title">年齢表 — あれ？何歳だっけ！？</h3>
-            <p class="work-desc">
-              誕生日を一度入れれば、年齢は毎年ひとりでに最新に。法要（回忌）や入学の年もお知らせします。
-              住所や電話番号も登録できるので、そのままアドレス帳としても使えます。
-            </p>
-            <p class="work-meta">
-              入力した情報は端末の中だけで暗号化して保存し、外部に送信しません。
-            </p>
-            <nav class="work-links">
-              <a href="https://play.google.com/store/apps/details?id=com.momizi.nennrei"
-                 target="_blank" rel="noopener noreferrer">Google Play で見る</a>
-              <a href="/privacy/nennrei.html">プライバシーポリシー</a>
-            </nav>
-          </div>
-        </article>
-
-        <article class="work-card" data-fade>
-          <div class="work-thumb work-thumb-warm" aria-hidden="true">
-            <img class="work-thumb-app" src="/assets/apps/slidepuzzle.jpg" alt=""
-                 width="256" height="256" loading="lazy" decoding="async">
-          </div>
-          <div class="work-body">
-            <p class="work-tag">Google Play で公開中</p>
-            <h3 class="work-title">スラパズ！美少女ギャラリー</h3>
-            <p class="work-desc">
-              スライドパズルを解くと、イラストが1枚ずつ集まっていくパズルゲームです。
-              集めたイラストは、ギャラリーでいつでも見返せます。
-            </p>
-            <p class="work-meta">
-              キャラクターイラストはAI（画像生成技術）で制作しています。12歳以上の方を対象としています。
-            </p>
-            <nav class="work-links">
-              <a href="https://play.google.com/store/apps/details?id=com.momizigames.slidingpuzzle"
-                 target="_blank" rel="noopener noreferrer">Google Play で見る</a>
-              <a href="https://bluecrow365.github.io/privacy.html"
-                 target="_blank" rel="noopener noreferrer">プライバシーポリシー</a>
-            </nav>
-          </div>
-        </article>
-
-        <a href="#contact" class="work-card work-card-cta" data-fade
-           aria-label="お問い合わせへ移動">
-          <div class="work-thumb work-thumb-dark" aria-hidden="true">
-            <span class="work-thumb-icon">＋</span>
-          </div>
-          <div class="work-body">
-            <p class="work-tag">ご相談募集中</p>
-            <h3 class="work-title">「こんなアプリが欲しい」も承ります</h3>
-            <p class="work-desc">
-              お仕事で使うちいさな道具から、個人でお使いになるアプリまで。
-              「こんなのできる？」というご相談を歓迎しています。
-            </p>
-          </div>
-        </a>
+      <div class="phones" aria-hidden="true">
+        <div class="phone p-back"><img src="/assets/apps/nennrei-2.webp" alt="" width="520" height="928" /></div>
+        <div class="phone p-front"><img src="/assets/apps/nennrei-1.webp" alt="" width="520" height="928" /></div>
       </div>
     </div>
   </section>
 
-  <!-- SERVICES -->
-  <section id="services" class="section section-alt">
-    <div class="container">
-      <div class="section-head" data-fade>
-        <p class="eyebrow">Services</p>
-        <h2 class="section-title">できること、ご一緒できること。</h2>
-        <p class="section-lead">
-          アプリづくりと並行して、下記のご相談も承っています。「これってお願いできる？」と気軽にお問い合わせください。
-        </p>
-      </div>
-
-      <div class="cards">
-        <article class="card" data-fade>
-          <div class="card-num">01</div>
-          <h3 class="card-title">ホームページ制作</h3>
-          <p class="card-desc">
-            シンプルで、読みやすいサイトを心がけています。スマホ表示・SEOの基本対応・更新のしやすさまで、ご相談しながら整えていきます。
-          </p>
-          <ul class="card-list">
-            <li>コーポレートサイト</li>
-            <li>サービス紹介・ランディングページ</li>
-            <li>個人のポートフォリオ</li>
-          </ul>
-        </article>
-
-        <article class="card card-feature" data-fade>
-          <div class="card-num">02</div>
-          <h3 class="card-title">業務効率化アプリ</h3>
-          <p class="card-desc">
-            「毎回手で入力していて少し大変」「Excel管理が限界かも」といったお悩みを、ちいさなツールに置き換えるお手伝いをしています。
-          </p>
-          <ul class="card-list">
-            <li>かんたんな業務管理ツール</li>
-            <li>集計やレポートの自動化</li>
-            <li>顧客・在庫の整理アプリ</li>
-          </ul>
-        </article>
-
-        <article class="card" data-fade>
-          <div class="card-num">03</div>
-          <h3 class="card-title">AI活用のご相談</h3>
-          <p class="card-desc">
-            生成AIを業務に取り入れたいけれど、何から始めれば…という方へ。一緒に試しながら、無理のない使い方を考えていきます。
-          </p>
-          <ul class="card-list">
-            <li>AIチャットの導入相談</li>
-            <li>ドキュメント作成の効率化</li>
-            <li>AI活用のはじめの一歩サポート</li>
-          </ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- 波形仕切り -->
-  <div class="divider-wave divider-wave-sand" aria-hidden="true">
-    <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
-      <path d="M0,30 C240,5 480,55 720,30 C960,5 1200,55 1440,30 L1440,60 L0,60 Z"
-            fill="#F5EBE0"/>
-    </svg>
-  </div>
-
-  <!-- PROCESS (ご依頼の流れ) -->
-  <section id="process" class="section section-sand">
-    <div class="container">
-      <div class="section-head" data-fade>
-        <p class="eyebrow eyebrow-warm">Process</p>
-        <h2 class="section-title">ご依頼の流れ</h2>
-        <p class="section-lead">難しい手続きはありません。お話しすることから始まります。</p>
-      </div>
-
-      <div class="process-list">
-        <div class="process-step" data-fade>
-          <div class="process-num">01</div>
-          <h3>ご相談</h3>
-          <p>メールで「こんなことできる？」をお送りください。1営業日以内にご返信します。</p>
-        </div>
-        <div class="process-step" data-fade>
-          <div class="process-num">02</div>
-          <h3>お打ち合わせ</h3>
-          <p>オンラインで30分ほど。やりたいこと・予算・スケジュールを伺います。</p>
-        </div>
-        <div class="process-step" data-fade>
-          <div class="process-num">03</div>
-          <h3>お見積もり</h3>
-          <p>無理のない範囲で進められるよう、選択肢を含めてご提示します。</p>
-        </div>
-        <div class="process-step" data-fade>
-          <div class="process-num">04</div>
-          <h3>制作・ご納品</h3>
-          <p>途中経過を共有しながら進めます。納品後のご質問にも引き続き対応します。</p>
+  <section id="apps" class="features">
+    <div class="wrap">
+      <div class="app-head">
+        <img src="/assets/apps/nennrei.png" alt="" width="64" height="64" />
+        <div>
+          <h2>年齢表 — あれ？何歳だっけ！？</h2>
+          <p>家族・親戚・友人の誕生日と連絡先をまとめておくアドレス帳です。</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- WHY (心がけていること) -->
-  <section id="why" class="section">
-    <div class="container">
-      <div class="section-head" data-fade>
-        <p class="eyebrow">Our Mindset</p>
-        <h2 class="section-title">心がけていること</h2>
-        <p class="section-lead">
-          まだまだ学びの途中ですが、これだけは大事にしたいと思っています。
-        </p>
-      </div>
-
-      <div class="features">
-        <div class="feature" data-fade>
-          <div class="feature-icon" aria-hidden="true">✿</div>
-          <h3>分かる言葉で、お話しすること</h3>
-          <p>専門用語をなるべく使わずに。「何ができて、何ができないか」を正直にお伝えするようにしています。</p>
+      <div class="feature-grid">
+        <div class="feature">
+          <h3>開くたびに、今日の年齢</h3>
+          <p>年齢は保存せず、表示のたびに今日の日付で数えます。年が変わっても書き直す必要はありません。</p>
         </div>
-        <div class="feature" data-fade>
-          <div class="feature-icon" aria-hidden="true">◎</div>
-          <h3>ちょうどよいサイズで、つくること</h3>
-          <p>立派すぎず、足りなさすぎず。お客様の規模感に合った道具をご提案できればと思っています。</p>
+        <div class="feature">
+          <h3>和暦のまま入力</h3>
+          <p>「昭和33年3月12日」のように、覚えている形でそのまま入れられます。表示は西暦と和暦の両方です。</p>
         </div>
-        <div class="feature" data-fade>
-          <div class="feature-icon" aria-hidden="true">∞</div>
-          <h3>つくった後も、ご一緒すること</h3>
-          <p>公開・納品して終わり、ではなく。困ったときに気軽に声をかけてもらえる関係を目指しています。</p>
+        <div class="feature">
+          <h3>入学と法要の年</h3>
+          <p>お孫さんの小学校入学や、三回忌・七回忌の年になると、その人のカードに色がつきます。</p>
+        </div>
+        <div class="feature">
+          <h3>端末の外へ出さない</h3>
+          <p>入力した情報は端末の中で暗号化して保存します。サーバへは送りません。</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- CTA / CONTACT -->
-  <section id="contact" class="section cta">
-    <div class="container cta-inner" data-fade>
-      <h2 class="cta-title">
-        まずは、<span class="grad">お話ししませんか。</span>
-      </h2>
-      <p class="cta-sub">
-        ご相談・お見積もりは無料です。「こんなこと聞いてもいい？」も歓迎します。<br />
-        1営業日以内にご返信いたします。
+      <p class="feature-foot">
+        日本語・英語・韓国語・繁体字中国語に対応。
+        <a href="/privacy/nennrei.html">プライバシーポリシー</a>
       </p>
-      <form class="contact-form"
-            action="/api/contact"
-            method="POST"
-            novalidate>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="cf-name">お名前</label>
-            <input id="cf-name" class="form-input" type="text" name="name"
-                   placeholder="山田 太郎" required autocomplete="name" />
+    </div>
+  </section>
+
+  <section id="events" class="events">
+    <div class="wrap events-grid">
+      <div class="events-text">
+        <p class="kicker-new">年齢表に新しく加わりました</p>
+        <h2>結婚記念日も、<br />免許証の更新も。</h2>
+        <p class="events-lead">
+          人ごとに「記念日」と「期限」を登録できます。
+          近づいてきたら、通知と一覧の色でお知らせします。
+        </p>
+        <dl class="events-list">
+          <div>
+            <dt>記念日</dt>
+            <dd>結婚記念日やその他の記念日を、決めた日数前と当日に通知します。
+              銀婚式・金婚式など 5 年ごとの節目には呼び名も添えます。</dd>
           </div>
-          <div class="form-group">
-            <label for="cf-email">メールアドレス</label>
-            <input id="cf-email" class="form-input" type="email" name="email"
-                   placeholder="your@email.com" required autocomplete="email" />
+          <div>
+            <dt>期限</dt>
+            <dd>運転免許証・パスポート・マイナンバーカードの有効期限を、
+              3・2・1か月前と当日に通知します。</dd>
           </div>
+          <div>
+            <dt>日付だけを保存</dt>
+            <dd>免許証やパスポートの番号は保存しません。入れるのは日付だけです。</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="events-demo" aria-label="アプリでの表示例">
+        <div class="notif">
+          <span class="notif-app"><img src="/assets/apps/nennrei.png" alt="" width="20" height="20" />年齢表</span>
+          <p class="notif-title">山田 一郎の運転免許証の期限が近づいています</p>
+          <p class="notif-body">あと2か月（2027年1月12日まで）</p>
         </div>
-        <div class="form-group">
-          <label for="cf-msg">お問い合わせ内容</label>
-          <textarea id="cf-msg" class="form-textarea" name="message" rows="4"
-                    placeholder="どんな小さなことでもお気軽にどうぞ。" required></textarea>
+        <div class="card-mock">
+          <div class="card-row">
+            <p class="card-name">山田 一郎 <span class="chip">家族</span></p>
+            <p class="card-age">68<small>歳</small></p>
+          </div>
+          <p class="card-sub">誕生日 1958年3月12日（昭和33年3月12日）</p>
+          <p class="card-line">💐 あと5日で結婚記念日（40周年・ルビー婚式）</p>
+          <p class="card-line">⚠ 運転免許証の期限まであと70日</p>
         </div>
-        <button type="submit" class="btn btn-primary btn-lg form-submit">送信する →</button>
-        <p class="form-success" hidden>✓ ありがとうございます。近日中にご返信いたします。</p>
-        <p class="form-error" hidden>送信に失敗しました。時間をおいて再度お試しください。</p>
+        <p class="demo-cap">通知と一覧の表示例</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="puzzle" class="puzzle">
+    <div class="wrap puzzle-inner">
+      <img src="/assets/apps/slidepuzzle.jpg" alt="" width="120" height="120" />
+      <div>
+        <h2>スラパズ！美少女ギャラリー</h2>
+        <p>
+          スライドパズルを解くたびにイラストが 1 枚ずつ集まるパズルゲーム。
+          イラストは AI（画像生成技術）で制作しています。12 歳以上の方が対象です。
+        </p>
+        <p class="puzzle-links">
+          <a class="btn btn-light" href="https://play.google.com/store/apps/details?id=com.momizigames.slidingpuzzle"
+             target="_blank" rel="noopener noreferrer">Google Play で入手</a>
+          <a class="on-dark" href="https://bluecrow365.github.io/privacy.html"
+             target="_blank" rel="noopener noreferrer">プライバシーポリシー</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="work">
+    <div class="wrap work-inner">
+      <h2>アプリづくりのかたわら、制作のご相談も。</h2>
+      <ul class="work-list">
+        <li><strong>ホームページ</strong>お店や事務所の紹介ページを、スマホで読みやすく。</li>
+        <li><strong>業務の小さな道具</strong>手入力や Excel 集計を、専用の小さなアプリに。</li>
+        <li><strong>AI の使い始め</strong>生成 AI の取り入れ方を、一緒に試しながら決めます。</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap contact-inner">
+      <div>
+        <h2>お問い合わせ</h2>
+        <p>アプリのご感想や不具合のご報告、制作のご相談はこちらから。1 営業日以内にお返事します。</p>
+      </div>
+      <form class="contact-form" action="/api/contact" method="POST">
+        <div class="row">
+          <label>お名前<input type="text" name="name" required autocomplete="name" /></label>
+          <label>メールアドレス<input type="email" name="email" required autocomplete="email" /></label>
+        </div>
+        <label>内容<textarea name="message" rows="5" required></textarea></label>
+        <button class="btn" type="submit">送信する</button>
+        <p class="form-ok" role="status" hidden>送信しました。1 営業日以内にお返事します。</p>
+        <p class="form-err" role="alert" hidden>送信できませんでした。通信状態を確かめて、もう一度お試しください。</p>
       </form>
-      <noscript>
-        <p class="cta-noscript">JavaScriptを有効にするとフォームが使えます。</p>
-      </noscript>
     </div>
   </section>
-
 </main>
 
-<footer class="site-footer">
-  <div class="container footer-inner">
-    <div class="footer-brand">
-      <span class="logo-mark" aria-hidden="true"></span>
-      <span>bluecrow<span class="logo-accent"> Studio</span></span>
-    </div>
-    <nav class="footer-links" aria-label="プライバシーポリシー">
-      <a href="/privacy/nennrei.html">年齢表のポリシー</a>
-      <a href="https://bluecrow365.github.io/privacy.html"
-         target="_blank" rel="noopener noreferrer">スラパズ！のポリシー</a>
-    </nav>
-    <p class="copyright">© 2026 bluecrow Studio. ご覧いただきありがとうございます。</p>
-
-    <!-- カラスSVG（かわいい飛翔） -->
-    <span class="footer-crow" aria-hidden="true">
-      <svg viewBox="0 0 96 60" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="crowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#0052FF"/>
-            <stop offset="100%" stop-color="#0033A8"/>
-          </linearGradient>
-          <linearGradient id="wingGrad" x1="0%" y1="100%" x2="0%" y2="0%">
-            <stop offset="0%" stop-color="#0052FF"/>
-            <stop offset="100%" stop-color="#5599FF"/>
-          </linearGradient>
-        </defs>
-
-        <!-- 尾羽 -->
-        <path d="M22 28 L5 22 L13 28 L5 30 L13 32 L5 38 L22 32 Z" fill="#0033A8"/>
-
-        <!-- 上翼（ふっくら丸め） -->
-        <path d="M30 28 Q24 4 50 5 Q57 15 50 27 Q44 31 37 31 Q31 31 30 28 Z"
-              fill="url(#wingGrad)"/>
-        <path d="M32 11 L42 23" stroke="#0033A8" stroke-width="0.8" opacity="0.45" fill="none"/>
-        <path d="M41 7 L46 21" stroke="#0033A8" stroke-width="0.8" opacity="0.4" fill="none"/>
-        <path d="M49 6 L50 22" stroke="#0033A8" stroke-width="0.8" opacity="0.35" fill="none"/>
-
-        <!-- 胴体（ぷっくり） -->
-        <ellipse cx="44" cy="30" rx="22" ry="7.5" fill="url(#crowGrad)"/>
-
-        <!-- 下翼 -->
-        <path d="M30 32 Q24 52 44 54 Q53 46 50 34 Q44 31 37 31 Q31 31 30 32 Z"
-              fill="#0033A8"/>
-        <path d="M28 42 L38 38" stroke="#001F66" stroke-width="0.8" opacity="0.5" fill="none"/>
-        <path d="M32 49 L42 43" stroke="#001F66" stroke-width="0.8" opacity="0.4" fill="none"/>
-
-        <!-- 頭（大きめでまるまる） -->
-        <circle cx="64" cy="27" r="9" fill="#0052FF"/>
-
-        <!-- ほっぺブラッシュ -->
-        <ellipse cx="61" cy="31" rx="5" ry="2.5" fill="#FF8BC4" opacity="0.32"/>
-
-        <!-- 目（大きくてつぶらな瞳） -->
-        <circle cx="66" cy="24" r="3.5" fill="#FAF6EF"/>
-        <circle cx="66.8" cy="24.2" r="2.2" fill="#0A1628"/>
-        <circle cx="68" cy="23" r="0.9" fill="#ffffff"/>
-        <circle cx="66" cy="25.8" r="0.5" fill="#ffffff" opacity="0.65"/>
-
-        <!-- くちばし（短くかわいい） -->
-        <path d="M72 26 L83 28 L82 30 L72 30 Z" fill="#E5A93D"/>
-        <path d="M72 28 L82 28.6" stroke="#B8841E" stroke-width="0.5" fill="none"/>
-
-        <!-- 胴体ハイライト -->
-        <path d="M30 28 Q44 25 59 27" stroke="#00D4FF" stroke-width="0.7" opacity="0.55" fill="none"/>
-
-        <!-- キラキラ -->
-        <circle cx="12" cy="14" r="1.2" fill="#E5A93D" opacity="0.65"/>
-        <circle cx="19" cy="8" r="0.8" fill="#00D4FF" opacity="0.7"/>
-      </svg>
-    </span>
+<footer class="foot">
+  <div class="wrap foot-inner">
+    <p>© 2026 bluecrow Studio</p>
+    <p><a href="/privacy/nennrei.html">年齢表のプライバシーポリシー</a></p>
   </div>
 </footer>
 
-<script src="script.js?v=2"></script>
+<script src="/script.js?v=3"></script>
 </body>
 </html>
